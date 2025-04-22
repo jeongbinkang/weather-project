@@ -1,0 +1,213 @@
+html, body {
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+.weather-wrap {
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/weather-bg.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather-container {
+  width: 1200px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.weather-box-l {
+  width: 350px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px 0px 0px 10px;
+}
+.weather-box-r {
+  width: 850px;
+  height: 100%;
+  background-color: #f6f6f8;
+  border-radius: 0px 10px 10px 0px;
+}
+.box-pad{
+  padding:35px;
+}
+.box-l-1 {
+  display: flex;
+  gap: 5px;
+}
+#city-input {
+  width: 200px;
+  height: 25px;
+}
+#search-btn {
+  background-color: #0b205f;
+  color: #fff;
+  width: 60px;
+  border-radius: 5px;
+}
+.box-l-2{
+  display: flex;
+  flex-direction: column;
+}
+#weather-icon{
+  width: 200px;
+  height: 200px;
+}
+#temp{
+  font-size: 45px;
+}
+#datetime {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+#date {
+  font-size: 22px;
+}
+#time{
+  color: #d7d6da;
+  padding-top: 3px;
+}
+#line {
+  width: 80%;
+  display: flex;
+  justify-self: center;
+  border: 1px solid #f2f2f2;
+  margin: 30px 0;
+}
+.box-l-3 {
+  margin-bottom: 45px;
+}
+.box-l-3 > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.box-l-3 > div > p {
+  font-size: 14px;
+}
+#humidity-icon, #windy-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+}
+.box-l-4 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.box-l-4 img {
+  width: 280px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+#city {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  z-index: 1;
+  margin: 0;
+}
+
+/* 오른쪽 박스 */
+.week-subject{
+  margin:80px 0 25px 0;
+}
+.todays-subject{
+  margin:10px 0 25px 0;
+}
+.todays-subject > p {
+  font-size: 20px;
+  font-weight: 700;
+}
+.week-subject > p{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#forecast {
+  display: flex;
+}
+.forecast-item-wrapper {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 120px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-item-wrapper:first-child{
+  margin-left: 0;
+}
+.forecast-date{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.month-day {
+  font-size: 14px;
+}
+.temp-min{
+  color: #2a74f8;
+  font-weight: 700;
+}
+.temp-max{
+  color: #dc0100;
+  font-weight: 700;
+}
+.forecast-pop img {
+  width: 20px;
+  height: 20px;
+}
+.forecast-pop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 12px;
+  gap:5px;
+}
+
+/* 시간대별 */
+.hourly-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.hour-item-wrapper{
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.hourly-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hour-icon {
+  width: 50%;
+  height: 50%;
+}
+.hour, .hour-temp {
+  padding-top: 10px;
+  font-size: 14px;
+}

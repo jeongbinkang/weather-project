@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather-project</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/reset.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" -->
+</head>
+
+<body>
+    <section class="weather-wrap">
+        <div class="weather-container">
+            <div class="weather-box-l">
+                <div class="box-pad">
+                    <div class="box-l-1">
+                        <input type="text" id="city-input" placeholder="도시 이름을 영어로 입력 (예: Seoul)" />
+                        <button id="search-btn">검색</button>
+                    </div>
+                    <div class="box-l-2">
+                        <img id="weather-icon" src="" alt="날씨 아이콘" />
+                        <p id="temp"></p>
+                        <div id="datetime">
+                            <p id="date"></p>
+                            <p id="time"></p>
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div class="box-l-3">
+                        <div>
+                            <img src="/src/assets/humidity_icon.png" alt="습도" id="humidity-icon">
+                            <p id="humidity"></p>
+                        </div>
+                        <div>
+                            <img src="/src/assets/windy-icon.png" alt="바람" id="windy-icon">
+                            <p id="wind"></p>
+                        </div>
+                        <div>
+                            <img src="/src/assets/rain-icon.png" alt="강수" id="windy-icon">
+                            <p id="rain"></p>
+                        </div>
+                    </div>
+                    <div class="box-l-4">
+                        <div>
+                            <img src="/src/assets/box-l-city.jpg" alt="citybg">
+                            <p id="city"></p>
+                        </div>
+                        <div id="uv"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-box-r">
+                <div class="box-pad">
+                    <div class="todays-subject">
+                        <p>Hourly Forecast</p>
+                    </div>
+                    <div id="hourly" class="hourly-container"></div>
+                    <div class="week-subject">
+                        <p>Week</p>
+                    </div>
+                    <div id="forecast"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/dist/app.js"></script> 
+</body>
+</html>

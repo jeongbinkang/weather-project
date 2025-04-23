@@ -90,7 +90,6 @@ function getForecast(city: string) {
         const day = date.getDate();
         const pop = items[0].pop !== undefined ? items[0].pop * 100 : 0;
 
-
         const forecastWrapper = document.createElement("div");
         forecastWrapper.classList.add("forecast-item-wrapper");
 

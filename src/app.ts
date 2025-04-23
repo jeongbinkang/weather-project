@@ -118,18 +118,13 @@ function getHourlyForecast(city: string) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      const now = new Date();
-      const today = now.getDate();
-
-      const hourlyToday = data.list.filter((item: any) => {
-        const itemDate = new Date(item.dt * 1000);
-        return itemDate.getDate() === today;
-      });
-
       const hourlyContainer = document.getElementById("hourly") as HTMLElement;
       hourlyContainer.innerHTML = "";
 
-      hourlyToday.forEach((item: any) => {
+      // 3시간 간격 예보 중 앞에서부터 8개만 출력
+      const forecastList = data.list.slice(0, 8); // 이 부분이 핵심!
+
+      for (const item of forecastList) {
         const time = new Date(item.dt * 1000);
         const hour = time.getHours().toString().padStart(2, "0");
         const icon = item.weather[0].icon;
@@ -139,20 +134,23 @@ function getHourlyForecast(city: string) {
         const hourlyEl = document.createElement("div");
         hourlyEl.classList.add("hour-item-wrapper");
         hourlyEl.innerHTML = `
-        <div class="hourly-item"> 
-          <div class="hour">${hour}:00</div>
-          <img src="${iconUrl}" alt="icon" class="hour-icon"/>
-          <div class="hour-temp">${temp}°C</div>
-        </div>
+          <div class="hourly-item">
+            <div class="hour">${hour}:00</div>
+            <img src="${iconUrl}" alt="icon" class="hour-icon"/>
+            <div class="hour-temp">${temp}°C</div>
+          </div>
         `;
 
         hourlyContainer.appendChild(hourlyEl);
-      });
+      }
     })
     .catch(err => {
       console.error("시간대별 날씨 정보를 불러오는 중 오류 발생:", err);
     });
 }
+
+
+
 
 // 페이지 로드 시 초기 호출
 getWeather(city);

@@ -105,7 +105,7 @@ function getHourlyForecast(city) {
         const hourlyContainer = document.getElementById("hourly");
         hourlyContainer.innerHTML = "";
         // 3시간 간격 예보 중 앞에서부터 8개만 출력
-        const forecastList = data.list.slice(0, 8); // 이 부분이 핵심!
+        const forecastList = data.list.slice(0, 8);
         for (const item of forecastList) {
             const time = new Date(item.dt * 1000);
             const hour = time.getHours().toString().padStart(2, "0");
